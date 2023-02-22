@@ -1,0 +1,25 @@
+%Ajustes dos Scans
+close all; clear all;
+load distances.mat
+for i = 67:67
+% load ScanDataPoints1.mat;
+    str_iScan=num2str(i);
+    eval(['load scandatapoints_original/ScanDataPoints' str_iScan '.mat;']);
+    theta = [];
+    rho = [];
+    [theta,rho] = cart2pol(pt_lst(1,:),pt_lst(2,:));
+    figure
+    plot(pt_lst(1,:),pt_lst(2,:),'o');
+    grid on
+    dist_corrigido=interp1(distances(2,:),distances(1,:),rho);
+    [x,y] = pol2cart(theta,dist_corrigido);
+    points = [x;y];
+    
+    figure
+    plot(points(1,:),points(2,:),'ro');
+    grid on
+    pt_lst=points;
+    
+    eval(['save ScanDataPointsCorrigido' str_iScan '.mat pt_lst pose_gt;']);
+% save ScanDataPointsCorrigido1.mat pt_lst pose_gt;
+end
