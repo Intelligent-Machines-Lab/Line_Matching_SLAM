@@ -22,7 +22,7 @@ Software utilizado nesse trabalho:
 
 ## Estrutura
 
-As pastas contidas nesse repositório contêm os códigos-fonte e estão prontos para serem baixados e utilizados uma vez que os programas pré requisitos estejam instalados.
+As pastas contidas nesse repositório possuem os códigos-fonte e estão prontos para serem baixados e utilizados uma vez que os programas pré requisitos estejam instalados.
 
 ### **Workspaces**
 
